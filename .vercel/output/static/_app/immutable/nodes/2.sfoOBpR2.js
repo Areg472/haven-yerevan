@@ -1,1 +1,0 @@
-import{B as e,D as t,I as n,T as r,g as i}from"../chunks/JPkr2CrP.js";import"../chunks/xihTtKlq.js";import"../chunks/DtxzYaQh.js";var a=t(`<a href="/yerevan">Անցնել Haven Երևան</a>`);function o(t){var o=a();i(`1uha8ag`,t=>{n(()=>{e.title=`Haven Երևան`})}),r(t,o)}export{o as component};
