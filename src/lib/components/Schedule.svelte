@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { scheduleIntro } from "$lib/data/content";
   import { defaultSiteData } from "$lib/data/site";
   import type { SiteImages } from "$lib/data/images";
   import type { ScheduleDay } from "$lib/data/types";
@@ -97,6 +98,11 @@
     >
       {heading}
     </h2>
+    {#if scheduleIntro}
+      <p class="relative z-15 mt-6 px-6 text-center font-body text-[clamp(1.125rem,2vw,2rem)] leading-[1.2] text-white">
+        {scheduleIntro}
+      </p>
+    {/if}
     <img
       src={images.schedulePlantLeft}
       alt=""

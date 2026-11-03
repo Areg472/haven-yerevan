@@ -99,7 +99,33 @@
           class="attendee-tagline glow-orange mt-[clamp(1rem,10vw,10rem)] text-[clamp(1rem,4vw,8rem)] leading-[clamp(1rem,4.75vw,5rem)] font-body text-center text-white sm:mt-[clamp(1rem,5vw,10rem)] sm:text-[clamp(1.25rem,2vw,4rem)] sm:leading-[clamp(1.5rem,2.75vw,5rem)]"
         >
           {#each tagline as part, i}
-            <span class="block">{part}</span>
+            {#if i === 0 && tagline[2]}
+              <span class="block">
+                {part.slice(0, part.lastIndexOf(" ") + 1)}
+                <span class="inline-flex max-w-full flex-wrap items-center justify-center gap-x-3 gap-y-1 align-middle">
+                  <span>{part.slice(part.lastIndexOf(" ") + 1)}</span>
+                  <span class="inline-flex items-center gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                      class="block h-[1em] w-[1em] shrink-0"
+                    >
+                      <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z" />
+                      <circle cx="12" cy="10" r="3" />
+                    </svg>
+                    <span>{tagline[2]}</span>
+                  </span>
+                </span>
+              </span>
+            {:else if i !== 2}
+              <span class="block">{part}</span>
+            {/if}
           {/each}
         </p>
 

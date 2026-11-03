@@ -1,5 +1,5 @@
 import { SITE_EVENT_SLUG } from "$lib/consts";
-import { event as defaultEvent, faqs } from "$lib/data/content";
+import { event as defaultEvent, faqs, schedule } from "$lib/data/content";
 import { resolveSiteData } from "$lib/data/site";
 import { getEventBySlug, parseSiteData } from "./events";
 
@@ -23,6 +23,7 @@ export async function getYerevanPageData() {
           ...defaultEvent.tagline.slice(1),
         ],
         faq: { ...data.faq, items: faqs },
+        schedule: { ...data.schedule, days: schedule },
         // Keep both local Shushi weights on the Armenian site.
         fonts: {},
       },
